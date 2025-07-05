@@ -6,7 +6,7 @@ addLayer("p", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#00FFFF",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "prestige points", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
@@ -25,4 +25,16 @@ addLayer("p", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
+    upgrades: {
+	11: {
+	    title:"starting",
+	    description:"*2 point gain.",
+	    cost:new Decimal(1),
+	},
+	12: {
+	    title:"self-boost",
+	    description:"Point boosts itself",
+	    cost:new Decimal(3),
+	},
+    },
 })
